@@ -9,14 +9,24 @@ const defaultTodos = [
   { text: 'Cortar Cebolla', completed: false },
   { text: 'Pasear Tuco', completed: false},
   { text: 'Tomar Agua', completed: true},
-  { text: 'Sonreir', completed: true }
+  { text: 'Sonreir1', completed: false },
+  { text: 'Sonreir', completed: true },
+  { text: 'Sonreir3', completed: true }
 ]
 
 function App() {
+  const [searchValue, setSearchValue] = React.useState('');
+  const [todos, setTodos] = React.useState(defaultTodos);
+  
+  const completedTodos = todos.filter(todo => todo.completed).length
+  const totalTodos = todos.length
   return (
     <>
-      <TodoCounter completed={16} total={20} />
-      <TodoSearch />
+      <TodoCounter completed={completedTodos} total={totalTodos} />
+      <TodoSearch 
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+      />
       <TodoList>
         {defaultTodos.map(todo => (
           <TodoItem 
