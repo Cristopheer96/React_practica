@@ -10,8 +10,8 @@ const defaultTodos = [
   { text: 'Pasear Tuco', completed: false},
   { text: 'Tomar Agua', completed: true},
   { text: 'Sonreir1', completed: false },
-  { text: 'Sonreir', completed: true },
-  { text: 'Sonreir3', completed: true }
+  { text: 'Sonreir', completed: true   },
+  { text: 'Sonreir3', completed: true   }
 ]
 
 function App() {
